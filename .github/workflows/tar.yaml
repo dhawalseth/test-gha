@@ -39,5 +39,5 @@ jobs:
         with:
           if-no-files-found: error
           name: test-zip-upload
-          path: artifact-to-upload.zip
+          path: artifact-to-upload.tar
           retention-days: 1
