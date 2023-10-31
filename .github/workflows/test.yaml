@@ -24,7 +24,7 @@ jobs:
       - name: Pull docker image
         run: |
           docker pull balenalib/jetson-nano-2gb-devkit:latest
-          docker save docker.io/balenalib/jetson-nano-2gb-devkit:latest -o repo/docker.tar
+          docker save -o repo/docker.tar docker.io/balenalib/jetson-nano-2gb-devkit:latest
         shell: bash
     
       - name: Create zip 
