@@ -21,8 +21,10 @@ jobs:
           token: ${{ github.token }}
           path: "repo"
 
-      - name: Create zip 
-        run: cd repo;docker pull balenalib/jetson-nano-2gb-devkit:latest;cd ../
+      - name: Pull docker image
+        run: |
+          docker pull balenalib/jetson-nano-2gb-devkit:latest
+          docker save docker.io/balenalib/jetson-nano-2gb-devkit:latest -o repo/docker.tar
         shell: bash
     
       - name: Create zip 
