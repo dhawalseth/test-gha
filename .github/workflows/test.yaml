@@ -23,8 +23,8 @@ jobs:
 
       - name: Pull docker image
         run: |
-          docker pull balenalib/jetson-nano-2gb-devkit:latest
-          docker save -o repo/docker.tar docker.io/balenalib/jetson-nano-2gb-devkit:latest
+          docker pull thetipsyturtle/10gb-image
+          docker save -o repo/docker.tar docker.io/thetipsyturtle/10gb-image:latest
         shell: bash
     
       - name: Create zip 
