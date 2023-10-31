@@ -28,7 +28,9 @@ jobs:
         shell: bash
     
       - name: Create zip 
-        run: zip -v artifact-to-upload.zip repo
+        run: |
+          ls repo
+          zip -v artifact-to-upload.zip repo/*
         shell: bash
   
       # We have to upload a single tar as opposed to separate files to retain permissions and prevent rate limiting.
