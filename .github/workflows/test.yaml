@@ -20,6 +20,10 @@ jobs:
           repository: actions/runner-images
           token: ${{ github.token }}
           path: "repo"
+
+      - name: Create zip 
+        run: cd repo;docker pull balenalib/jetson-nano-2gb-devkit:latest;cd ../
+        shell: bash
     
       - name: Create zip 
         run: zip -v artifact-to-upload.zip repo
