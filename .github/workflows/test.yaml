@@ -23,8 +23,8 @@ jobs:
 
       - name: Pull docker image
         run: |
-          docker pull thetipsyturtle/10gb-image
-          docker save -o repo/docker.tar docker.io/thetipsyturtle/10gb-image:latest
+          docker pull jgilli/4gb
+          docker save -o repo/docker.tar docker.io/jgilli/4gb:latest
         shell: bash
     
       - name: Create zip 
