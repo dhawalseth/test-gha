@@ -1,0 +1,34 @@
+# Post-merge Build
+name: Build
+
+# Controls when the workflow will run.
+on:
+  workflow_dispatch:
+
+jobs:
+
+  Build:
+    runs-on: [linux]
+
+    steps:
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/actions/runner-images
+          token: ${{ github.token }}
+          path: "repo"
+    
+      - name: Create zip 
+        run: zip -v artifact-to-upload.zip repo
+        shell: bash
+  
+      # We have to upload a single tar as opposed to separate files to retain permissions and prevent rate limiting.
+      - name: Upload zip of artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          if-no-files-found: error
+          name: test-zip-upload
+          path: artifact-to-upload.zip
+          retention-days: 1
