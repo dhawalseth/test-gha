@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/actions/runner-images
+          repository: actions/runner-images
           token: ${{ github.token }}
           path: "repo"
     
