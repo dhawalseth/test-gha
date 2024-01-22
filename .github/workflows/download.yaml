@@ -27,6 +27,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           if-no-files-found: error
+          compression-level: 0
           name: ${{ matrix.size }}
           path: ${{ matrix.size }}.tar
           retention-days: 1
